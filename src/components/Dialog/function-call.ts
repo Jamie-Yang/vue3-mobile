@@ -31,7 +31,7 @@ function showDialog(options: DialogOptions | string = '') {
   const vm = createVNode(DialogConstructor, { ...opts })
 
   render(vm, container)
-  document.body.appendChild(container)
+  document.body.appendChild(container.firstElementChild as Node)
 
   return new Promise((resolve) => {
     if (!vm.props) return
